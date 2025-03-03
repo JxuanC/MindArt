@@ -1,5 +1,5 @@
 # Mind Artist: Creating Artistic Snapshots with Human Thought
-Official Implementation of [MindArt (CVPR2024)](https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Mind_Artist_Creating_Artistic_Snapshots_with_Human_Thought_CVPR_2024_paper.html) in PyTorch (codes will be released soon)
+Official Implementation of [MindArt (CVPR2024)](https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Mind_Artist_Creating_Artistic_Snapshots_with_Human_Thought_CVPR_2024_paper.html) in PyTorch
 
 ![Intro](assets/Intro.png)
 
@@ -14,6 +14,25 @@ Official Implementation of [MindArt (CVPR2024)](https://openaccess.thecvf.com/co
 ## Brain2Image
 ![brain2image results](assets/ImgReconstruction.png)
 
+## MindArt Code
+
+1) Download DIR dataset and ImageNet dataset
+
+2) Install Stable Diffusion v1.4, and download checkpoint (sd-v1-4.ckpt)
+
+3) Extract CLIP visual representations as well as the faiss index
+
+4) Change Paths in configure.py to match your file locations
+
+5) train the GM-guided fMRI encoder by running GM/matching_learning.py
+
+6) train the fMRI-to-Text stream by running TextReconstruction/brain2text_train.py
+
+7) train the fMRI-to-Image stream by running ridge.py
+
+8) reconstructing image by running diffusion_decoding.py
+
+* Our codebase builds on StableDiffusionReconstruction, SuperGlue, MAE, SMALLCAP, stable-diffusion repositories. We would like to thank the authors.
 
 ## Citation
 ```
